@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/">
+        <file>downArrow.png</file>
+    </qresource>
+</RCC>
