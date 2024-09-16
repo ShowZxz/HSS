@@ -54,12 +54,15 @@ Highscore : permet de consulter les scores.
 Score : s'exécute après une session de jeu pour enregistrer les résultats.
 Vous pouvez crée un compte sur pinemhi pour faire les test pour la lecture des fichiers http://www.pinemhi.com/
 Pour lancer HighscoreSystem il faut copier ce code dans le launch script de PinupPopper (VisualpinballX)
-cd /d "C:\HighScoreSystem"
+
+				cd /d "C:\HighScoreSystem"
 				START "" "C:\HighScoreSystem\Highscore.exe" "[?ROM?]" 
 				cd /d "[DIREMU]"
 
 
 # Comment HSS fonctionne
-j'utilise le projet 
+j'utilise le projet Highscore pour effectué les choses suivant dans l'ordre chronologique :
+- Lecture du fichier Setup.ini géneré par Config.
+- Le fichier Setup.ini me donne le login de l'user les informations sur quelle écran il veut affiché l'application et le type de
 # Build du programme
 Vous trouverez l'installateur du programme sur le site internet https://highscoresystem.com/
