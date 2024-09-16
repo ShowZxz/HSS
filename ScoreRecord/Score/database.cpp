@@ -7,7 +7,7 @@ Database::Database() {
 
 bool Database::openDatabase(){
     db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("194.164.63.57");
+    db.setHostName("");
     db.setPort(3306);
     db.setDatabaseName("");
     db.setUserName("");
