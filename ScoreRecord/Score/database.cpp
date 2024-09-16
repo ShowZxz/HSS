@@ -9,9 +9,9 @@ bool Database::openDatabase(){
     db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("194.164.63.57");
     db.setPort(3306);
-    db.setDatabaseName("spinner_highscore_db");
-    db.setUserName("spinner_hs_user");
-    db.setPassword("ndp9exd@MBG1vuf-cdj");
+    db.setDatabaseName("");
+    db.setUserName("");
+    db.setPassword("");
 
     if (db.open()){
         return true;
