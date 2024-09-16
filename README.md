@@ -5,12 +5,14 @@ Ce projet comprend quatre programmes développés sous Qt Creator version 6_5_3 
 il fonctionne qu'avec les resolutions suivantes
 - 1280 x 720
 - 1920 x 1080
-Veuillez mettre l'ecran ou vous souhaiter affiché dans une des deux resolution sur windows il est préférable d'avoir un Topper pour l'affichage des scores
+Veuillez mettre l'ecran ou vous souhaiter affiché dans une des deux résolution sur windows il est préférable d'avoir un Topper pour l'affichage des scores
 
 # Prérequis
 Qt Creator version 6_5_3 avec la chaîne d'outils MinGW.
 Les DLLs pour la connexion a la base de données qui se trouve dans HSS/Extra/*les_dll
 les DLLs sont a mettre dans dans le build du projet Score record et Highscore
+PinupPoper https://www.nailbuster.com/wikipinup/doku.php?id=start
+VisualPinballX
 
 # 1. Config
 
@@ -50,9 +52,14 @@ Config : à lancer avant toute autre application pour configurer l'interface et 
 Front : utilisé pour montrer un visuel durant la navigation dans PinupPopper .
 Highscore : permet de consulter les scores.
 Score : s'exécute après une session de jeu pour enregistrer les résultats.
-vous pouvez crée un compte sur pinemhi pour faire les test pour la lecture des fichiers http://www.pinemhi.com/
+Vous pouvez crée un compte sur pinemhi pour faire les test pour la lecture des fichiers http://www.pinemhi.com/
+Pour lancer HighscoreSystem il faut copier ce code dans le launch script de PinupPopper (VisualpinballX)
+cd /d "C:\HighScoreSystem"
+				START "" "C:\HighScoreSystem\Highscore.exe" "[?ROM?]" 
+				cd /d "[DIREMU]"
+
 
 # Comment HSS fonctionne
-
+j'utilise le projet 
 # Build du programme
 Vous trouverez l'installateur du programme sur le site internet https://highscoresystem.com/
