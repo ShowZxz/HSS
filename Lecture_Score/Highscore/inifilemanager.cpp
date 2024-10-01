@@ -55,7 +55,7 @@ QString IniFileManager::getSerialNumberFromFile(){
 
 }
 
-
+//pas utilisé
 QString IniFileManager::getKeyTable(const QString &input){
     QSettings settings("Config/rom.ini", QSettings::IniFormat);
     QStringList keys = settings.allKeys();

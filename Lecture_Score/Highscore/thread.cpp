@@ -7,13 +7,14 @@ Thread::Thread(const QString& processName, QString user, QString title, QString 
 
 
 void Thread::run()
-{
+{   //tant qu'il n'est pas interrompu (tant que la partie n'est pas finis)
     while (!isInterruptionRequested())
     {
 
         QProcess process;
+        //Processus de VisualPinballX
         process.start("tasklist", QStringList() << "/FI" << "IMAGENAME eq " + m_processName);
-
+        //Si VisualPinballX est fermé alors.. (Si la partie est terminé alors..)
         if (process.waitForFinished())
         {
             QByteArray output = process.readAllStandardOutput();
@@ -34,7 +35,7 @@ void Thread::run()
 
 
 
-                //transfert du score
+                //écriture dans Score/Score.ini du chemin pour lire le fichier score de PinemHi + le titre de la table + username
                 if ( !m_title.isEmpty() && !m_user.isEmpty() && !m_NVRAM.isEmpty() && !m_NVRAM.isEmpty() ){
                     QString scorePATH = m_pinemhiPATH+m_NVRAM;
                     qDebug() <<scorePATH;
@@ -59,11 +60,13 @@ void Thread::run()
 
 
 
-                // lancement de l'enregistrement
+                // Lancement de Score.exe afin d'excuter le script pour enregistrer les scores
                 QString exeScorePATH="Score.exe";
-                //Execution du front apres fermuture de la table
+                //Execution de front.exe apres fermuture de la table
                 //QString exePath = "Front.exe";
                 QString exePath = QCoreApplication::applicationDirPath() + "/Front.exe";
+
+                //Lancement de Score.exe + Front.exe
                 QProcess *processScore = new QProcess();
                 QProcess *processFront = new QProcess();
 
@@ -71,6 +74,7 @@ void Thread::run()
                 processScore->start(exeScorePATH);
                 processFront->start(exePath);
 
+                //Temps d'attente pour la fermeture de Highscore.exe
                 sleep(3);
 
 

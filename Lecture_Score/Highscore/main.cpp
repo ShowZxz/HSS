@@ -25,17 +25,17 @@ int main(int argc, char *argv[])
     MainWindow w;
 
 
-
+    //Instanciation des Class
     IniFileManager ini;
     Database database;
     Manager manager;
 
     QList<QScreen*> screens = QGuiApplication::screens();
 
-
+    //Variable pour le processus aprés fermeture de VisualpinballX
     QString vpinball = "VPinballX.exe";
 
-
+    //Variable pour affiché sur l'interface (Label)
     QString worldUsername,topUsername,behindUsername,worldScore,topScore,behindScore,bestScore;
 
 
@@ -47,7 +47,7 @@ int main(int argc, char *argv[])
     behindScore = "None";
 
 
-    //Récupération des données du Setup.ini
+    //Récupération des données du Config/Setup.ini (info de l'utlisateur + info sur le type d'écran a affiché l'application
     QString username = ini.getUsernameFromFile();
     QString password = ini.getPasswordFromFile();
     QString pathPinemhi = ini.getPinemhiPathFromFile();
@@ -57,12 +57,13 @@ int main(int argc, char *argv[])
     QString manufacturer = ini.getManufacturerFromFile();
     qDebug() << model << serial << manufacturer;
 
+    //Requete des information du login de l'utilisateur
     QList<LoginUser> resultLogin = database.getLoginUser(username, password);
 
-
+    //Vérification des info dans le Setup.ini si le username et le mdp est vide
     if (!username.isEmpty() || !password.isEmpty()) {
 
-
+        //Vérification de la présence de l'utilisateur dans la BDD
         if (resultLogin.isEmpty()) {
             QMessageBox::critical(nullptr, "Erreur Database", "L'utilisateur n'est pas inscrit ou erreur dans Setup.INI.");
             return 1;
@@ -76,7 +77,7 @@ int main(int argc, char *argv[])
     }
     //######################################################## LOGIQUE ARGV ###########################################################################
 
-
+    // Vérification de la présence de l'argument fournit par pinuppoer (c'est le nom de la Rom)
     if (argc < 2){
         QMessageBox::critical(nullptr, "Highscore System Error", "No argument, verify the pinup lauch script use [?ROM?] read the Read Me for more information");
         return 1;
@@ -84,31 +85,36 @@ int main(int argc, char *argv[])
 
 
     //QString gameName = argv[1];
+    //Nom de la rom fournit par Pinuppoper
     QString rom = argv[1];
     //QString rom = "afm_113b";
 
     //QString gameName = "AC-DC";
 
+    //Récupération du nom du jeu via le fichier Config/Rom.ini
     QString gameFullName=ini.getTitle(rom);
 
     qDebug()<<"@@@@@@@@@@@@@@@@@@@ gameFullName"+gameFullName;
 
     qDebug()<<"@@@@@@@@@@@@@@@@@@@"+rom;
 
+    //Ajoute du ".txt" pour le chemin du fichier a ouvrir dans PinemHi
     rom = rom+".txt";
 
     qDebug()<<"ROM = " <<rom;
 
+    //Forcer le nom de la rom si on a pas le nom du jeu supporter dans notre systeme
     if (gameFullName.isEmpty()){
         rom ="";
     }
 
     qDebug()<<"ROM APRES TXT "+rom;
 
+    //Front.exe processus
     QString processName = "Front.exe";
     //##################################################################################### PROCESS KILL ###################################################################################################
 
-    //Fermeture de l'application Front
+    //Fermeture de l'application Front pour mettre en place HSS
     QProcess *process = new QProcess();
     QStringList processList = process->systemEnvironment();
     processList << "tasklist";
@@ -124,30 +130,34 @@ int main(int argc, char *argv[])
     } else{
 
     }
+    //Fermeture de Front.exe
     delete process;
 
     //######################################################## QUERY BDD ###########################################################################
-    // User Highscore
+
+    // User Highscore (requete SQL)
     bestScore = database.getHighscoreFromDatabase(username,gameFullName);
 
-    // Adversaire
+    // Adversaire (requete SQL)
     QList<ScoreInfoTop> result_WorldScore = database.getWorldHighscore(gameFullName);
     QList<ScoreInfoTop> result_Front = database.getTopScoresInFrontUser(gameFullName, username);
     QList<ScoreInfoTop> result_Behind = database.getTopScoresBehindUser(gameFullName, username);
 
-    // Rank
+    // Rank (requete SQL)
     QString scoreInfo = database.getInfoRank(username,gameFullName);
     QString userRank = scoreInfo.right(1);
 
-
+    //La varible strPosTop, strPosBottom sont ceux qu'on va afficher dans le label rank qui les correspondent
     QString strPosTop,strPosBottom;
+
+    //logique pour les rank (celui qui est devant l'utilisateur on rajoute +1 et celui dérriere on ajoute -1
     int rank = userRank.toInt();
     strPosTop = QString::number(rank - 1);
     strPosBottom = QString::number(rank + 1);
 
 
 
-
+    //Stockage du world record score dans la Class Manager
     foreach (const ScoreInfoTop& score, result_WorldScore) {
 
         //qDebug() <<"MAIN CPP WR : " + score.username << score.score;
@@ -158,6 +168,7 @@ int main(int argc, char *argv[])
 
 
     }
+     //Stockage du score devant l'utilisateur dans la Class Manager
     foreach (const ScoreInfoTop& score, result_Front) {
 
         //qDebug() <<"MAIN CPP TOP INFO : " + score.username << score.score;
@@ -165,7 +176,7 @@ int main(int argc, char *argv[])
         manager.setfrontPosScore(QString::number(score.score));
 
     }
-
+     //Stockage du score derriere l'utilisateur dans la Class Manager
     foreach (const ScoreInfoTop& score, result_Behind) {
 
         //qDebug() <<"MAIN CPP BEHIND INFO : " + score.username << score.score;
@@ -182,7 +193,7 @@ int main(int argc, char *argv[])
 
 
 
-    // affectation des valeur pour les noms et score
+    // Affectation des valeur pour les noms et les scores des utilisateurs
     worldUsername = manager.getworldPosUser();
     worldScore = manager.getworldPosScore();
 
@@ -192,12 +203,12 @@ int main(int argc, char *argv[])
     behindUsername = manager.getbehindPosUser();
     behindScore = manager.getbehindPosScore();
 
-
+    //Séparation des scores exemple : 100 000 000 au lieu de 100000000
     bestScore=manager.formatStringWithSpaces(bestScore);
     topScore=manager.formatStringWithSpaces(topScore);
     behindScore=manager.formatStringWithSpaces(behindScore);
     worldScore=manager.formatStringWithSpaces(worldScore);
-
+    //Empeche qu'on affiche -1 sur l'interface
     strPosTop = manager.setZeroToOne(strPosTop);
 
     qDebug() << "MAIN CPP GLOBAL INFO : "<< " Le meilleur score de : "+ username +" = "+ bestScore +"Rank : #"+ userRank <<
@@ -206,7 +217,7 @@ int main(int argc, char *argv[])
         "BEHIND USER = :Rank #" + strPosBottom +" " + behindUsername + " " +behindScore;
 
 
-    //########################################################################## Config screen ##########################################################################
+    //########################################################################## AFFICHAGE SUR L'INTERFACE GRAPHIQUE ##########################################################################
 
 
 
@@ -214,11 +225,11 @@ int main(int argc, char *argv[])
 
 
 
-
+    // feuille de style CSS
     QString styleSheetNumber;
     QString styleSheetName;
     QString styleSheetRank;
-
+    //Déclaration des labels a placé sur l'image
     QLabel *myBestScoreLabel,*worldRecordLabel,*topScoreLabel,*midScoreLabel,*botScoreLabel,*midRankLabel,*botRankLabel,*topRankLabel,*myRankLabel,*worldRankLabel,*myName,
         *worldName,*topName,*botName,*midName;
 
@@ -258,7 +269,7 @@ int main(int argc, char *argv[])
 
     }*/
 
-    // Si la table n'est pas supporté
+    // Si la table n'est pas supporté affiché NOT SUPPORTED
     if (rom.isEmpty()){
         /*
         QMessageBox msgBox(QMessageBox::Warning, "Avertissement", "<font color='red'> Empty Nvram , The GAMEFULLNAME doesnt match with the Nvram verify rom.ini or this table is not SUPPORTED by HIGHSCORESYTEM !</font>", QMessageBox::Ok, &w);
@@ -275,13 +286,15 @@ int main(int argc, char *argv[])
     }
 
 //#############################################################################SETUP SCREEN##############################################################################################
-//mise en place des label suivant les deux resolution disponible
+//Mise en place des label suivant les deux resolution disponible
     if ( !typeOfScreen.isEmpty()){
         if (typeOfScreen == "1280 x 720") {
+            //FEUILLE DE STYLE CSS
             styleSheetNumber = "font-size: 30px; color: red; font-weight: bold; background: transparent; border: none;";
             styleSheetName = "font-size: 15px; color: red; font-weight: bold; background: transparent; border: none;";
             styleSheetRank = "font-size: 20px; color: red; font-weight: bold; background: transparent; border: none;";
 
+            //Placement des labels
             myBestScoreLabel = new QLabel("100000000000", &w);
             myBestScoreLabel->setGeometry(220, 235, 400, 110);
             myBestScoreLabel->setAlignment(Qt::AlignCenter);
@@ -343,6 +356,7 @@ int main(int argc, char *argv[])
             botName->setGeometry(590, 390, 400, 110);
             botName->setAlignment(Qt::AlignCenter);
 
+            //APPLICATION DU CSS SUR LES LABELS
             myBestScoreLabel->setStyleSheet(styleSheetNumber);
             worldRecordLabel->setStyleSheet(styleSheetNumber);
             topScoreLabel->setStyleSheet(styleSheetNumber);
@@ -363,10 +377,12 @@ int main(int argc, char *argv[])
 
         }
         if(typeOfScreen == "1920 x 1080"){
+            //FEUILLE DE STYLE CSS
             styleSheetNumber = "font-size: 30px; color: red; font-weight: bold; background: transparent; border: none;";
             styleSheetName = "font-size: 20px; color: red; font-weight: bold; background: transparent; border: none;";
             styleSheetRank = "font-size: 20px; color: red; font-weight: bold; background: transparent; border: none;";
 
+            //Placement des labels
             myBestScoreLabel = new QLabel("100000000000", &w);
             myBestScoreLabel->setGeometry(430, 390, 400, 110);
             myBestScoreLabel->setAlignment(Qt::AlignCenter);
@@ -428,6 +444,7 @@ int main(int argc, char *argv[])
             botName->setGeometry(1020, 610, 400, 110);
             botName->setAlignment(Qt::AlignCenter);
 
+            //APPLICATION DU CSS SUR LES LABELS
             myBestScoreLabel->setStyleSheet(styleSheetNumber);
             worldRecordLabel->setStyleSheet(styleSheetNumber);
             topScoreLabel->setStyleSheet(styleSheetNumber);
@@ -449,6 +466,7 @@ int main(int argc, char *argv[])
         }
 
     } else{
+        //AFFICHAGE D'UN MESSAGE D'ERREUR SI L'éCRAN est PAS REMPLIS
         QMessageBox msgBox(QMessageBox::Critical, "Avertissement", "<font color='red'> NO SCREEN IN SETUP.INI !</font>", QMessageBox::Ok, &w);
         msgBox.setWindowTitle("HIGHSCORE SYSTEM : Error ");
         msgBox.exec();
@@ -457,7 +475,7 @@ int main(int argc, char *argv[])
     }
 
 
-    //setup of label
+    //AJOUT DU TEXT DANS LES LABELS PLACé
     myBestScoreLabel->setText(bestScore); worldRecordLabel->setText(worldScore); topScoreLabel->setText(topScore); botScoreLabel->setText(behindScore); midScoreLabel->setText(bestScore);
     worldName->setText(worldUsername); myName->setText(username); topName->setText(topUsername); midName->setText(username); botName->setText(behindUsername);
     botRankLabel->setText(strPosBottom); midRankLabel->setText(userRank); topRankLabel->setText(strPosTop); myRankLabel->setText(userRank); worldRankLabel->setText("1");
@@ -466,11 +484,12 @@ int main(int argc, char *argv[])
 
 
 
-    //#####################################################################################PROCESS################################################################################################
-    //thread si visualpinball est fermé ou pas
+
+    //Lancement du Thread afin de savoir si la partie est terminé pour marquer les informations a fournir a Score.exe (Apres fermeture de VisualPinball)
     Thread thread(vpinball,username,gameFullName,pathPinemhi,rom);
     thread.start();
 
+    //Affichage de l'application en mode plein écran
     w.showFullScreen();
 
 

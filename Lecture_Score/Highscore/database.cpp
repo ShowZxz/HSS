@@ -6,6 +6,7 @@ Database::Database() {
     openDatabase();
 }
 
+//Connexion à la BDD
 bool Database::openDatabase(){
     db = QSqlDatabase::addDatabase("QMYSQL");
     db.setHostName("194.164.63.57");
@@ -27,6 +28,7 @@ void Database::closeDatabase(){
     db.close();
 }
 
+//Récuperation de l'username et code qui correspond à l'utilisateur dans la BDD
 QList<LoginUser> Database::getLoginUser(const QString &pseudo, const QString &code) {
     QList<LoginUser> result;
     qDebug() << ":Pseudo =" << pseudo;
@@ -38,7 +40,7 @@ QList<LoginUser> Database::getLoginUser(const QString &pseudo, const QString &co
     }
 
     qDebug() << "######################################## Ouverture BDD getLoginUser. ###################################################";
-
+    //Requete SQL
     QString queryStr = "SELECT Pseudo, Code FROM utilisateurs WHERE Pseudo = :Pseudo AND Code = :Code;";
     QSqlQuery query;
     query.prepare(queryStr);
@@ -113,7 +115,7 @@ QString Database::getHighscoreFromDatabase(QString username, QString title) {
 
 }
 
-// Request for user rank
+// Requete rang de l'utilisateur
 QString Database::getInfoRank(const QString &user, const QString &title){
     QString result;
     if (!db.open()) {
@@ -149,7 +151,7 @@ QString Database::getInfoRank(const QString &user, const QString &title){
     return result;
 }
 
-// Request for Top 1 info
+// Requete pour le score du top 1 sur la table actuel
 QList<ScoreInfoTop> Database::getWorldHighscore(const QString &title){
     QList<ScoreInfoTop> worldScore;
 
@@ -199,7 +201,7 @@ QList<ScoreInfoTop> Database::getWorldHighscore(const QString &title){
 
 
 }
-// Requête de pour la personne devant l'utilisateur
+// Requête du score de la personne devant l'utilisateur
 QList<ScoreInfoTop> Database::getTopScoresInFrontUser(const QString &title, const QString &user) {
     QList<ScoreInfoTop> topScores;
 
@@ -254,7 +256,7 @@ QList<ScoreInfoTop> Database::getTopScoresInFrontUser(const QString &title, cons
     db.close();
     return topScores;
 }
-// Requête de pour la personne derrière l'utilisateur
+// Requête du score de la personne derrière l'utilisateur
 QList<ScoreInfoTop> Database::getTopScoresBehindUser(const QString &title, const QString &user) {
     QList<ScoreInfoTop> topScores;
 
