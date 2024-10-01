@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
     MainWindow w;
     Inifilemanager ini;
 
+    //Récupération des données du Config/Setup.ini (info de l'utlisateur + info sur le type d'écran a affiché l'application
     QString model = ini.getModelFromFile();
     QString serial = ini.getSerialNumberFromFile();
     QString manufacturer = ini.getManufacturerFromFile();
@@ -23,7 +24,7 @@ int main(int argc, char *argv[])
 
     QList<QScreen*> screens = QGuiApplication::screens();
 
-// choix de l'ecran
+// Choix de l'ecran
     QScreen* targetScreen = nullptr;
     for (QScreen* screen : screens) {
         if (screen->manufacturer() == manufacturer && screen->model() == model && screen->serialNumber() == serial) {
@@ -41,7 +42,7 @@ int main(int argc, char *argv[])
         qDebug() << "Aucun écran correspondant trouvé.";
     }
 
-    // Lancement du thread qui ferme l'application si PinuUpMenu est ferme
+    //Lancement du Thread afin de savoir si PinUpMenu.exe est fermé
     QString processName = "PinUpMenu.exe";
 
     Thread thread(processName);

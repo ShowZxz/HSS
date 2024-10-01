@@ -8,12 +8,14 @@ Thread::Thread(const QString& processName)
 
 void Thread::run()
 {
+
+    //tant qu'il n'est pas interrompu
     while (!isInterruptionRequested()) {
         QProcess process;
         process.start("tasklist", QStringList() << "/FI" << "IMAGENAME eq " + m_processName);
 
         sleep(2);
-
+        //Processus de PinupMenu.exe
         if (process.waitForFinished())
         {
             QByteArray output = process.readAllStandardOutput();
@@ -28,6 +30,7 @@ void Thread::run()
             {
                 qDebug() << m_processName << "is not running.";
 
+                //Fermeture quand PinupMenu.exe est fermé
                 QCoreApplication::quit();
             }
         }
