@@ -10,50 +10,65 @@
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
-
+    //Instanciation des Class
     Inifilemanager ini;
     Manager manager;
     QTimer timer;
     Database database;
 
-    //Récuperation des données de HighscoreSystem (table joué, chemin du fichier de score, nom de l'utilisateur)
+    //Récuperation des données de HighscoreSystem dans le fichier Score/Score.ini (table joué, chemin du fichier de score, nom de l'utilisateur)
     QString title = ini.getTitleFromFile();
     QString path = ini.getPathFromFile();
     QString user = ini.getUsernameFromFile();
+
+
+    //Remise a zéro du fichier Score/Score.ini pour éviter les triches
     manager.setByDefault();
 
     int intervalle = 1000; // Interval de 1 seconde (1000 ms)
     timer.setInterval(intervalle);
+
     qDebug()<<path<<user;
     qDebug()<<"Title is :"<<title;
 
+    //Chemin du fichier a ouvrir pour récuperer le score
     QFile file(path);
     int tentatives = 5; // Nombre de tentatives
     int score = 0;
 
 
     int existing = 0;
-    //vérification du jeu
+    //vérification de l'éxistence du jeu
     existing = database.existGameDatabase(title);
     qDebug()<<existing;
 
-
+    //Si le jeu n'existe pas dans nôtre BDD il stop le script
     if (existing < 1){
         database.closeDatabase();
         qDebug()<<"Fermeture app";
         return 1;
     }
     //Lecture + enregistrement des scores
+
+    //Lancement du timer
     QObject::connect(&timer, &QTimer::timeout, [&]() {
         qDebug() << "Le timer a déclenché !";
+
+        //Récupération du meilleur score
         score = manager.recupererMeilleurScore(path);
-        QString title = manager.getTitleTable();
+
         qDebug()<< title<<"TIIIIIIITTTRE";
-        database.recordDatabase(title,user,score);
+
         tentatives--;
         qDebug()<< tentatives;
+
+        //Quand les tentatives de lecture sont finit
         if (tentatives < 0){
-            qDebug()<<"Enregistrement en cours"<<score;
+
+            //Enregistrement dans la BDD
+
+            qDebug()<<"Enregistrement en cours "<<score;
+
             database.recordDatabase(title,user,score);
             timer.stop();
             database.closeDatabase();

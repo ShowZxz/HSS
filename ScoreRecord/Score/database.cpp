@@ -4,14 +4,14 @@
 Database::Database() {
     openDatabase();
 }
-
+// Connexion BDD
 bool Database::openDatabase(){
     db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("");
+    db.setHostName("194.164.63.57");
     db.setPort(3306);
-    db.setDatabaseName("");
-    db.setUserName("");
-    db.setPassword("");
+    db.setDatabaseName("spinner_highscore_db");
+    db.setUserName("spinner_hs_user");
+    db.setPassword("ndp9exd@MBG1vuf-cdj");
 
     if (db.open()){
         return true;
@@ -21,11 +21,12 @@ bool Database::openDatabase(){
     }
 
 }
-
+// Fermeture de la BDD
 void Database::closeDatabase(){
     db.close();
 }
 
+//Fonction pour vérifier si le jeu existe dans la BDD
 bool Database::existGameDatabase(const QString &table){
     QSqlQuery query;
     query.prepare("SELECT COUNT(*) FROM jeux WHERE Nom_jeu = :Title");
@@ -42,11 +43,11 @@ bool Database::existGameDatabase(const QString &table){
     }
     return false;
 }
-
+//Fonction Pour enregister le score dans la BDD
 void Database::recordDatabase(const QString &table, const QString &username, const long long &score){
     QString time_format = "yyyy-MM-dd hh:mm:ss";
     QString _datetime=QDateTime::currentDateTime().toString(time_format);
-
+    //Vérification des données necessaire pour l'enregistrement
     if (!table.isEmpty() && !username.isEmpty() && score != 0){
 
         QString selectQueryStr = QString("SELECT s.Score "
@@ -63,9 +64,9 @@ void Database::recordDatabase(const QString &table, const QString &username, con
         if (selectQuery.exec() && selectQuery.next()) {
             qlonglong oldScore = selectQuery.value(0).toLongLong();
             qDebug()<< "Old Score = " <<oldScore<< "New Score = "<<score;
-
+            //Si le score sélectionner dans la BDD est inférieur au nouveau score alors on éffectue une mise a jour du score
             if (score > oldScore) {
-                // Mettre à jour l'enregistrement existant
+                // Mettre à jour l'enregistrement au score existant
                 QString updateQueryStr = QString("UPDATE scores s "
                                                  "JOIN utilisateurs u ON s.ID_utilisateur = u.ID_utilisateur "
                                                  "JOIN jeux j ON s.ID_jeu = j.ID_jeu "
@@ -84,7 +85,7 @@ void Database::recordDatabase(const QString &table, const QString &username, con
                 }
             }
         } else {
-            // Insérer un nouvel enregistrement si l'ancien n'existe pas
+            // Insértion d'un nouvel enregistrement si l'ancien n'existe pas
             QString insertQueryStr = QString("INSERT INTO scores (ID_utilisateur, ID_jeu, Score, Date_enregistrement) "
                                              "VALUES ( "
                                              "(SELECT ID_utilisateur FROM utilisateurs WHERE Pseudo = :User), "
