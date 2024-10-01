@@ -2,10 +2,13 @@
 #define MANAGER_H
 #include <QString>
 
+// Class pour récupérer les varibles entre les fonctions
 class Manager
 {
 public:
     Manager();
+
+    //Set
     void setModel(QString model){
         this->model = model;
     }
@@ -17,15 +20,15 @@ public:
         this->manu = manu;
     }
 
-
+    //Get
     QString getSerial(){return serial;};
     QString getModel(){return model;}
     QString getManufacturer(){return manu;}
 
 
 
-    QString formatStringWithSpaces(const QString &input);
-    long long recupererMeilleurScore(const QString &file);
+
+
 
 private:
     QString model;
