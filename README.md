@@ -183,6 +183,7 @@ C'est plus compliqué car il prends en compte des valeurs precise pour le bon fo
 ![Image_Alt](https://github.com/ShowZxz/HSS/blob/fbbec19bdf063000a7970ff5e65c9df2cad52fa7/image/rom.png)
 Maitenant vous pouvez fournir l'argument rom a Highscore.exe
 
+#Configuration de pinemHi
 # Comment tester les applications dans un environnement réel
 - Vous allez devoir créer un répertoire dans le disque "C:/HighscoreSystem" et mettre vos .exe dans celui ci 
 - Allez dans le répertoire "C:\Qt\6.5.3\mingw_64\bin" et ouvrir un powershell
