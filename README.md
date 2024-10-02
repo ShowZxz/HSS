@@ -47,7 +47,7 @@ Les informations écrite sur l'interface sera stocké a l'aide d'un bouton SAVE 
 
 ### Image de Config.exe
 ![uiconfig](https://github.com/user-attachments/assets/74c7d477-aa63-4998-8f4d-cadf5e636a59)
-![Image Alt](https://github.com/ShowZxz/HSS/blob/7a31187895353a5f8fb379d05fa6232c5794faaf/image/uiconfig.png)
+![Image_Alt](https://github.com/ShowZxz/HSS/blob/7a31187895353a5f8fb379d05fa6232c5794faaf/image/uiconfig.png)
 
 # 2. Front
 Le programme Front est une interface visuelle qui permet de naviguer dans les jeux tout en affichant le programme Highscore. Il sert à fournir une expérience utilisateur fluide en matière de navigation dans PinuPoper.
