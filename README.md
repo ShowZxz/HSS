@@ -44,13 +44,25 @@ Les informations écrite sur l'interface sera stocké a l'aide d'un bouton SAVE 
 	
 	[SCALE]
 	Size_screen=1280 x 720
+```
+### Explication du fichier Setup.ini
+- Le groupe [User] permet au programme Highscore de récuperer les information pour le login de l'utlisateur
+- Le groupe [SCREEN] permet au programme Highscore d'identifier le bon écran a affiché l'application
+- Le groupe [Path] permet au programme Highscore d'avoir le chemin par Défault pour la lecture des scores
+- Le groupe [Scale] permet au programme Highscore d'avoir la résolution afin de placer les labels au bon endroit
 
-### Image de Config.exe
-![uiconfig](https://github.com/user-attachments/assets/74c7d477-aa63-4998-8f4d-cadf5e636a59)
+### Image Config.exe
+
 ![Image_Alt](https://github.com/ShowZxz/HSS/blob/7a31187895353a5f8fb379d05fa6232c5794faaf/image/uiconfig.png)
 
 # 2. Front
 Le programme Front est une interface visuelle qui permet de naviguer dans les jeux tout en affichant le programme Highscore. Il sert à fournir une expérience utilisateur fluide en matière de navigation dans PinuPoper.
+![Image_Alt](https://github.com/ShowZxz/HSS/blob/83159ad21d5fa160c30deed3255d78cf49ca25eb/image/Score3.png)
+
+### Explication du programme Front
+- Le programme Front va s'affiché une fois la premiére partie sera faite il restera affiché pendant la navigation sur PinupPopperMenu
+- Il dispose d'un thread qui vérifie si le programme PinupMenuSetup est fermé c'est a dire que quand PinupPopperMenu se ferme Front se ferme par la suite
+- Sans oublier qui lit le fichier Config/Setup.ini pour pouvoir affiché l'application sur le bon écran
 
 # 3. Highscore
 Le programme Highscore affiche :
@@ -59,6 +71,41 @@ Les scores de l'utilisateur.
 Le top 1 des scores mondiaux.
 celui qui est devant et derrière lui
 Il permet à l'utilisateur de suivre ses performances ainsi que celles des autres joueurs.
+
+### Explication du programme Highscore
+Ordre chronologique des évenement
+- Le programme va lire le fichier Config/Setup.ini pour récuperer les information sur l'utilisateur et l'écran
+- Effectuer une vérification du login de l'utilisateur
+- Vérification de l'argument passé par pinupPopper (voir Explication )
+- Récupération du titre via le nom de la rom passé en argument avec la lecture du fichier Config/Rom.ini qui permet de traduire le nom de la rom au titre concerné
+- Verification si le jeu est supporté par nôtre system
+- Fermeture de l'application Front.exe ( pour en place HighscoreSystem)
+- Execution des requete SQL pour : Le score de l'utilisateur, le top 1 sur ce jeu ,qui est devant + son score et qui est derriere lui + son score.
+- Setup de l'écrans + déplacemnt de l'application vers l'écran selon les informatiuon récuperer precedement dans le fichier Config/Setup.ini
+- Mise en place des labels selon la résolution
+- Affecter les labels avec les informations récolté
+- Affichage de l'application
+- Lancement d'un thread qui permet de savoir quand l'utilisateur a finit une partie pour stocké provisoirement dans le fichier Score/Info.ini les information suivante: nom du jeu qu'il a joué,son pseudo, le chemin pour la lecture du score
+- Thread : le thread permet aussi executer front afin de donner un visuel au retour de la navigation et executer Score.exe pour enrgistrer le score dans la BDD
+
+### Plus d'info sur Highscore 
+
+j'utilise qui Pinemhi qui stocke les scores a l'adresse suivante : 
+```Info.ini
+	Leaderboard=PINemHi/PINemHi LeaderBoard/TOP10_Personal/
+```
+La lecture des scores ce fait sur la BDD.
+
+#### Comment savoir sur quel jeu l'utilisateur joue ?
+J'utilise le Lauch script de Pinuppoper qui execute Highscore.exe en passant comme argument le nom de la ROM 
+
+```Launch Script
+	cd /d "C:\HighScoreSystem"
+	START "" "C:\HighScoreSystem\Highscore.exe" "[?ROM?]"
+	cd /d "[DIREMU]"
+```
+Voir "Explication pour la configuration de PinupPopperSetup" pour affiché [?ROM?]
+
 
 # 4. Score
 Le programme Score enregistre le score d'un utilisateur à la fin d'une session de jeu. Il s'intègre avec PinemHi, un outil qui génère un fichier contenant les scores pour une gestion et une consultation ultérieures.
