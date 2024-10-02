@@ -108,9 +108,24 @@ Voir "Explication pour la configuration de PinupPopperSetup" pour affiché [?ROM
 
 
 # 4. Score
-Le programme Score enregistre le score d'un utilisateur à la fin d'une session de jeu. Il s'intègre avec PinemHi, un outil qui génère un fichier contenant les scores pour une gestion et une consultation ultérieures.
+Le programme Score enregistre le score d'un utilisateur à la fin d'une session de jeu. Il s'intègre avec PinemHi, un outil qui génère un fichier contenant les scores
 
-# Installation
+### Explication du programme Score
+Score.exe sera éxecuté par Highscore a la fin d'une partie
+une fois score.exe sera en cours d'execution il va recuperer les valeurs stocké dans le fichier Score/Info.ini
+Exemple du fichier Info.ini
+```Info.ini
+	[Info]
+	Path=PINemHi/PINemHi LeaderBoard/TOP10_Personal/afbm.113b.txt
+	Table=Attack From Mars
+	Username=user
+```
+- Score.exe va verifier si le jeu existe
+- il va lancé un timer qui va lire 5 fois le fichier ou le score est stocké grace au chemin recuperé dans le fichier.ini puis a la fin du timer on enregistre le score dans la BDD
+- Le script ce lance en tache de fond il n'y a pas d'interface graphique
+
+
+# Installation de l'environnement sur QTCreator
 Clonez le dépôt depuis GitHub :
 bash
 Copier le code
