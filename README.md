@@ -129,11 +129,16 @@ Exemple du fichier Info.ini
 Clonez le dépôt depuis GitHub :
 bash
 Copier le code
+```git code
 git clone (https://github.com/ShowZxz/HSS.git)
-Ouvrez le projet dans Qt Creator.
-Configurez le projet pour la chaîne d'outils MinGW.
-Compilez et exécutez les programmes depuis l'IDE.
-Utilisation
+```
+
+- Ouvrez le projet dans Qt Creator pour chaque programme independemment (Score,Lecture score,Config,Highscore).
+- Ouvrez le fichier .pro pour chaque projet et configuré le chemin que vous souhaité
+- Configurez le projet pour la chaîne d'outils MinGW.
+- Compilez et exécutez les programmes depuis l'IDE.
+
+### Test programme
 Config : à lancer avant toute autre application pour configurer l'interface et s'authentifier.
 Front : utilisé pour montrer un visuel durant la navigation dans PinupPopper .
 Highscore : permet de consulter les scores.
@@ -145,10 +150,50 @@ Pour lancer HighscoreSystem il faut copier ce code dans le launch script de Pinu
 				START "" "C:\HighScoreSystem\Highscore.exe" "[?ROM?]" 
 				cd /d "[DIREMU]"
 
+# Comment tester les programmes
+### Config:
+Pour tester Config il suffit juste d'executer le programme depuis L'IDE
+### Highscore
+C'est plus compliqué car il prends en compte des valeurs precise pour le bon fonctionnement des l'applications vous pouvez remplacer les valeurs par des valeur fictives comme :
+```code
+	QString rom = "afm_113b"
+	QString gameName = "AC-DC";
+```
+#### Mettre en commentaire si vous passez pas d'argument
+```code comm
+	/* if (argc < 2){
+        QMessageBox::critical(nullptr, "Highscore System Error", "No argument, verify the pinup lauch script use [?ROM?] read the Read Me for more information");
+        return 1;
+    } */
+```
 
-# Comment HSS fonctionne
-j'utilise le projet Highscore pour effectué les choses suivant dans l'ordre chronologique :
+# Explication pour la configuration de PinupPopperSetup 
+### Allez dans Games Manager
+![Image_Alt](https://github.com/ShowZxz/HSS/blob/fbbec19bdf063000a7970ff5e65c9df2cad52fa7/image/Menu%201.png)
+### Allez dans Import pour ajouter les informations de la table une les infos ajouter vous allez voir dans la section rom quel sera remplis
+![Image_Alt](https://github.com/ShowZxz/HSS/blob/fbbec19bdf063000a7970ff5e65c9df2cad52fa7/image/import%20rolm.png)
+### Allez dans Popper Setup / Emulators / VisualPinball X /Lauch Setup
+![Image_Alt](https://github.com/ShowZxz/HSS/blob/fbbec19bdf063000a7970ff5e65c9df2cad52fa7/image/Launch%20setup.png)
+### Copié le code suivant dans le Lauch Script :
+```code rom
+	cd /d "C:\HighScoreSystem"
+	START "" "C:\HighScoreSystem\Highscore.exe" "[?ROM?]" 
+	cd /d "[DIREMU]"
+```
+![Image_Alt](https://github.com/ShowZxz/HSS/blob/fbbec19bdf063000a7970ff5e65c9df2cad52fa7/image/rom.png)
+Maitenant vous pouvez fournir l'argument rom a Highscore.exe
 
+# Comment tester les applications dans un environnement réel
+- Vous allez devoir créer un répertoire dans le disque "C:/HighscoreSystem" et mettre vos .exe dans celui ci 
+- Allez dans le répertoire "C:\Qt\6.5.3\mingw_64\bin" et ouvrir un powershell
+- Dans le powershell tapez :
+  ```powershell code
+  	.\windeployqt.exe "C:\HighScoreSystem\Highscore.exe"
+  	.\windeployqt.exe "C:\HighScoreSystem\Front.exe"
+  	.\windeployqt.exe "C:\HighScoreSystem\Score.exe"
+  	.\windeployqt.exe "C:\HighScoreSystem\Config.exe"
+  ```
+  Une fois vos application déployé lancé PinuppoperMenu est joué une table
 # HSS
 
 HighScoreSystem
