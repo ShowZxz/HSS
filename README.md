@@ -14,6 +14,7 @@ les DLLs sont a mettre dans dans le build du projet Score record et Highscore
 PinupPoper https://www.nailbuster.com/wikipinup/doku.php?id=start
 VisualPinballX
 Un écran de type topper configurer dans Windows a la résolution 1280 x 720
+Compte sur [PinemHi](http://www.pinemhi.com/) version 3.6.2
 
 # 1. Config (partie Développement)
 
@@ -183,7 +184,7 @@ C'est plus compliqué car il prends en compte des valeurs precise pour le bon fo
 ![Image_Alt](https://github.com/ShowZxz/HSS/blob/fbbec19bdf063000a7970ff5e65c9df2cad52fa7/image/rom.png)
 Maitenant vous pouvez fournir l'argument rom a Highscore.exe
 
-#Configuration de pinemHi
+
 # Comment tester les applications dans un environnement réel
 - Vous allez devoir créer un répertoire dans le disque "C:/HighscoreSystem" et mettre vos .exe dans celui ci 
 - Allez dans le répertoire "C:\Qt\6.5.3\mingw_64\bin" et ouvrir un powershell
@@ -194,72 +195,26 @@ Maitenant vous pouvez fournir l'argument rom a Highscore.exe
   	.\windeployqt.exe "C:\HighScoreSystem\Score.exe"
   	.\windeployqt.exe "C:\HighScoreSystem\Config.exe"
   ```
+  - Dans Structure/HighscoreSystem vous avez la structure du dossier pour le déploiment de l'application  
   Une fois vos application déployé lancé PinuppoperMenu est joué une table
-# HSS
+# Pinemhi Configuration et Fonctionnement avec HSS
+Pour lancer le script des scores automatiquement j'ai fais un petit script rapide qui lance pinemhi.rom.monitor au démarrage de l'ordinateur
+- 1 Ouvrir l'explorateur de fichier, allez dans la barre de recherche et copié ce code là
+```shell
+	shell:startup
+```
+- 2 Coller le shortcut pinemhi dans le dossier démarrer \Start Menu\Programs\Startup
+- 3 Allez sur le shorcut et mettre éxecution en tant administrateur
+- 4 Creer un fichier dans le même dossier demarrage un .bat Creer un fichier dans le même dossier demarrage.bat
 
-HighScoreSystem
-Ce projet comprend quatre programmes développés sous Qt Creator version 6_5_3 MinGW. Chacun de ces programmes joue un rôle spécifique dans la gestion et l'affichage des scores de l'utilisateurs dans  l'environnement de Pinuppoper.
-il fonctionne qu'avec les resolutions suivantes
-- 1280 x 720
-- 1920 x 1080
-Veuillez mettre l'ecran ou vous souhaiter affiché dans une des deux résolution sur windows il est préférable d'avoir un Topper pour l'affichage des scores
+### Fonctionnement avec HSS
+Une fois que pinemhi_rom_monitor est lancé automatiquement dés que vous allez jouer une table Pinemhi va génerer le fichier de scores correspondant a la table dans le dossier C:\HighScoreSystem\PINemHi\PINemHi LeaderBoard\TOP10_Personal\nom_rom.txt
+Score.exe va lire le fichier de score correspondant au dernier jeu que l'utilisateur a joué grace a l'argument passé par PinupPopper
+# Note de fin
+Le programme HSS n'a pas un objectif a but lucratif mais a fournir une meilleur experience a la Communauté de VisualPinball a tout public.
+Le code est mis a disposition a fin que la communauté puisse améliorer l'application et benificier du meilleur expérience de jeu.
 
-# Prérequis
-Qt Creator version 6_5_3 avec la chaîne d'outils MinGW.
-Les DLLs pour la connexion a la base de données qui se trouve dans HSS/Extra/*les_dll
-les DLLs sont a mettre dans dans le build du projet Score record et Highscore
-PinupPoper https://www.nailbuster.com/wikipinup/doku.php?id=start
-VisualPinballX
-
-# 1. Config
-
-Le programme Config permet à l'utilisateur de :
-
-D'avoir une interface graphique pour la configuration
-Sélectionner l'écran sur lequel il souhaite afficher l'application.
-Entrer son pseudo et son code pour s'identifier.
-S'inscrire via un bouton si l'utilisateur n'a pas encore de compte.
-Bouton test pour vérifier le bonne écran
-
-
-# 2. Front
-Le programme Front est une interface visuelle qui permet de naviguer dans les jeux tout en affichant le programme Highscore. Il sert à fournir une expérience utilisateur fluide en matière de navigation dans PinuPoper.
-
-# 3. Highscore
-Le programme Highscore affiche :
-
-Les scores de l'utilisateur.
-Le top 1 des scores mondiaux.
-celui qui est devant et derrière lui
-Il permet à l'utilisateur de suivre ses performances ainsi que celles des autres joueurs.
-
-# 4. Score
-Le programme Score enregistre le score d'un utilisateur à la fin d'une session de jeu. Il s'intègre avec PinemHi, un outil qui génère un fichier contenant les scores pour une gestion et une consultation ultérieures.
-
-# Installation
-Clonez le dépôt depuis GitHub :
-bash
-Copier le code
-git clone (https://github.com/ShowZxz/HSS.git)
-Ouvrez le projet dans Qt Creator.
-Configurez le projet pour la chaîne d'outils MinGW.
-Compilez et exécutez les programmes depuis l'IDE.
-Utilisation
-Config : à lancer avant toute autre application pour configurer l'interface et s'authentifier.
-Front : utilisé pour montrer un visuel durant la navigation dans PinupPopper .
-Highscore : permet de consulter les scores.
-Score : s'exécute après une session de jeu pour enregistrer les résultats.
-Vous pouvez crée un compte sur pinemhi pour faire les test pour la lecture des fichiers http://www.pinemhi.com/
-Pour lancer HighscoreSystem il faut copier ce code dans le launch script de PinupPopper (VisualpinballX)
-
-				cd /d "C:\HighScoreSystem"
-				START "" "C:\HighScoreSystem\Highscore.exe" "[?ROM?]" 
-				cd /d "[DIREMU]"
-
-
-# Comment HSS fonctionne
-j'utilise le projet Highscore pour effectué les choses suivant dans l'ordre chronologique :
-- Lecture du fichier Setup.ini géneré par Config.
-- Le fichier Setup.ini me donne le login de l'user les informations sur quelle écran il veut affiché l'application et le type de
 # Build du programme
 Vous trouverez l'installateur du programme sur le site internet https://highscoresystem.com/
+
+# Installateur
