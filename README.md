@@ -158,7 +158,7 @@ Pour tester Config il suffit juste d'executer le programme depuis L'IDE
 C'est plus compliqué car il prends en compte des valeurs precise pour le bon fonctionnement des l'applications vous pouvez remplacer les valeurs par des valeur fictives comme :
 ```code
 	QString rom = "afm_113b"
-	QString gameName = "AC-DC";
+	QString gameName = "Attack From Mars";
 ```
 #### Mettre en commentaire si vous passez pas d'argument
 ```code comm
@@ -213,6 +213,7 @@ Score.exe va lire le fichier de score correspondant au dernier jeu que l'utilisa
 # Note de fin
 Le programme HSS n'a pas un objectif a but lucratif mais a fournir une meilleur experience a la Communauté de VisualPinball a tout public.
 Le code est mis a disposition a fin que la communauté puisse améliorer l'application et benificier du meilleur expérience de jeu.
+Nôtre liste de table compatible sont identique a celle de PinemHi
 
 # Build du programme
 Vous trouverez l'installateur du programme sur le site internet https://highscoresystem.com/
