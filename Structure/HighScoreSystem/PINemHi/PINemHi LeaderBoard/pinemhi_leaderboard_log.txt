@@ -1,0 +1,42 @@
+----------------------------------------------------------------------
+15/09/2024, 21:23
+pinemhi leaderboard version :  3.6.2.0
+VPinmame version :  
+Player :  Show1
+detected game with rom description :  Attack From Mars (1.13b / S1.1)
+matching romname :  afm_113b 
+previous afm_113b score extracted 
+
+15/09/2024, 21:23 
+pinemhi leaderboard version :  3.6.2.0
+VPinmame version :  
+Player :  Show1
+detected send score button pushed from game with rom description :  Attack From Mars (1.13b / S1.1) 
+new afm_113b score extracted 
+*** previous score is equal to new score *** 
+*** probably because there was no game played *** 
+*** it could also be that this rom is not supported (yet) *** 
+*** this score will not be submitted *** 
+----------------------------------------------------------------------
+
+----------------------------------------------------------------------
+15/09/2024, 21:24
+pinemhi leaderboard version :  3.6.2.0
+VPinmame version :  
+Player :  Show1
+still running game with rom description :  Attack From Mars (1.13b / S1.1)
+matching romname :  afm_113b 
+previous afm_113b score extracted 
+
+15/09/2024, 21:24 
+pinemhi leaderboard version :  3.6.2.0
+VPinmame version :  
+Player :  Show1
+detected exit from game with rom description :  Attack From Mars (1.13b / S1.1) 
+new afm_113b score extracted 
+*** previous score is equal to new score *** 
+*** probably because there was no game played *** 
+*** it could also be that this rom is not supported (yet) *** 
+*** this score will not be submitted *** 
+----------------------------------------------------------------------
+

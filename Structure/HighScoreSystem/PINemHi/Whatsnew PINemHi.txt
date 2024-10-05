@@ -1,0 +1,633 @@
+﻿**********************
+PINemHi Version 3.6.2
+**********************
+Added the following games to PINemHi LeaderBoard:
+The Simpsons
+Michael Jordan
+Laser War
+Playboy 35th Anniversary
+Monday Night Football
+Atlantis
+Blackwater 100
+Truck Stop
+Escape from the Lost World
+Dungeons & Dragons
+Heavy Metal Meltdown
+Party Animal
+Hardbody
+City Slicker
+Strange Science
+Special Force 
+MotorDome
+Black Belt
+
+Badges added to PINemHi Leaderboard:
+Scores
+-------
+All of the above (new) games
+
+Special scores
+--------------
+The Simpsons (loops)
+Monday Night Football (loops)
+World Challenge Soccer (most goals and world champ)
+Gladiators (beast slayer)
+Teed Off (holes in one)
+Street Fighter II (the master)
+Operation: Thunder (five star general)
+Surf n Safari (rapids record)
+Car Hop (record heat wave)
+Hoops (high basket points)
+Vegas (slot king)
+Title Fight (highest punches)
+Silver Slugger (highest runs to date)
+Lights Camera Action! (5 of  kind)
+Teenage Mutant Nina Turtles (Data East) (loops)
+Checkpoint (loops and speed record)
+Robocop (ramp jumps)
+
+
+Important !
+Submitting a score can now be done in game using a button/key of your choice or f3 (vpinmame reset).
+Best way to do that is after a complete game played.
+When you do it in the middle of a game you can get pinball missing message starting a new game.
+If you get a lot of missing pinball messages even after completed games revert to the old method (exiting a game)
+
+
+PINemHi Changes:
+
+Added the following roms (161 in total):
+Aaron Spelling (1.01)=aar_101.nv    
+Agents 777=agent777.nv              
+Ali=ali.nv                          
+Ali (7-digit conversion Free Play rev. 76)=alib.nv
+Ali (Free Play)=alifp.nv
+Airborne (1.5)=abv105.nv
+Attack From Mars (1.1 Pinball FX / S1.1)=afm_11pfx.nv
+Attack From Mars (FreeWPC 0.20)=afm_f20.nv
+A.G. Football (R07u)=agfoot07.nv
+A.G. Football (R18u)=agfootbl.nv
+A.G. Football (R18u, 2.1 Sound)=agfootbl.nv
+A.G. Football (R18u, 2.5L Sound)=agfootbl25l.nv
+A.G. Soccer-Ball (R07u)=agsocc07.nv
+A.G. Soccer-Ball (R18u, 2.1 Sound)=agsoccer.nv
+A.G. Soccer-Ball (R18u, 2.5L Sound)=agsoccer25l.nv
+Andromeda (alternate set)=andromea.nv
+Andromeda=andromed.nv
+Apollo 13 (2.03)=apollo2.nv
+Apollo 13 (5.01, Display 4.01)=apollo14.nv
+AC/DC (V1.21)=acd_121.nv
+AC/DC (V1.25)=acd_125.nv
+AC/DC (V1.3)=acd_130.nv
+AC/DC (V1.4)=acd_140.nv
+AC/DC (V1.5)=acd_150.nv
+AC/DC (V1.52)=acd_152.nv
+AC/DC Limited Edition (V1.5)=acd_150h.nv
+AC/DC Limited Edition (V1.52)=acd_152h.nv
+Atleta=atleta.nv
+Amazon Hunt (alternate set)=amazonha.nv
+Amazon Hunt II (French Free Play)=amazn2fp.nv
+Amazon Hunt II (French)=amazonh2.nv
+Amazon Hunt III (French Free Play)=amazn3fp.nv
+Amazon Hunt III (French)=amazonh3.nv
+Amazon Hunt III (rev. 1 French Free Play)=amaz3afp.nv
+Amazon Hunt III (rev. 1)=amazon3a.nv
+Arena (Free Play)=arena_fp.nv
+Arena (French Free Play)=arenaffp.nv
+Arena (French)=arenaf.nv
+Arena (German Free Play)=arenagfp.nv
+Arena (German)=arenag.nv
+Arena (rev. 1 Free Play)=arenaafp.nv
+Arena (rev. 1)=arenaa.nv
+Attack=attack.nv
+Avengers, The (V1.1)=avs_110.nv
+Avengers, The Limited Edition (V1.2)=avs_120h.nv
+Attila The Hun=attila.nv
+Baby Pac-Man (Video/Pinball Combo, Updated U9)=babypaca.nv
+Bad Girls (Free Play)=badgrlfp.nv
+Bad Girls (French Free Play)=badgrffp.nv
+Bad Girls (French)=badgirlf.nv
+Bad Girls (German Free Play)=badgrgfp.nv
+Bad Girls (German)=badgirlg.nv
+Batman Forever (1.02)=batmanf1.nv
+Batman Forever (2.02)=batmanf2.nv
+Big Buck Hunter Pro (V1.4)=bbh_140.nv
+Big Buck Hunter Pro (V1.5)=bbh_150.nv
+Batman: The Dark Knight (V2.1)=bdk_210.nv
+Batman: The Dark Knight (V2.2)=bdk_220.nv
+Batman: The Dark Knight (V2.4)=bdk_240.nv
+Batman: The Dark Knight (V2.9)=bdk_290.nv
+Beat the Clock (with flasher support)=beatclc2.nv
+Big Guns (L-AC Competition MOD)=bguns_lac.nv
+Big Game=biggame.nv
+Big Game (Free Play)=biggamfp.nv
+Big Game (MOD rev. 7)=biggameb.nv
+Big Game (MOD rev. 8)=biggamec.nv
+Big Game (MOD rev. 9)=biggamed.nv
+Big House (Free Play)=bighosfp.nv
+Big House (French Free Play)=bighsffp.nv
+Big House (French)=bighousf.nv
+Big House (German Free Play)=bighsgfp.nv
+Big House (German)=bighousg.nv
+Black Knight 2000 (PA-7 Prototype)=bk2k_pa7.nv
+Black Knight 2000 (PF-1 Prototype French)=bk2k_pf1.nv
+Black Belt (Squawk and Talk)=blackbl2.nv
+Black Jack (Free Play+)=blackjcd.nv
+Black Jack (Saucer points modification)=blackjcc.nv
+Black Velvet=blvelvet.nv
+Banzai Run (L-3 Target sound fix)=bnzai_t3.nv
+Bone Busters Inc. (Free Play)=bonebsfp.nv
+Bone Busters Inc. (French Free Play)=bonebffp.nv
+Bone Busters Inc. (French)=bonebstf.nv
+Bone Busters Inc. (German Free Play)=bonebgfp.nv
+Bone Busters Inc. (German)=bonebstg.nv
+Bounty Hunter (Free Play)=bounthfp.nv
+Bounty Hunter (German Free Play)=bountgfp.nv
+Bounty Hunter (German)=bountyhg.nv
+Break=break.nv
+Break Shot (Beta)=bsb105.nv
+Break Shot (1.2)=bsv102.nv
+Batman (1.03 French)=btmn_f13.nv
+301/Bullseye (MOD rev. 12)=bullsey2.nv
+301/Bullseye (Normal pinball scoring MOD rev. 13)=bullsen2.nv
+301/Bullseye (Normal pinball scoring)=bullseyn.nv
+301/Bullseye=bullseye.nv
+Bushido (alternate set A)=bushidoa.nv
+Bushido (alternate set B)=bushidob.nv
+Bushido=bushido.nv
+Camel Lights=camlight.nv
+Catacomb (Free Play)=catacofp.nv
+Catacomb (No Bagatelle)=cataconb.nv
+Catacomb=catacomb.nv
+Cerberus=cerberus.nv
+Creature from the Black Lagoon (L-2)=cftbl_l2.nv
+Creature from the Black Lagoon (P-3 Prototype, SP-1)=cftbl_p3.nv
+Cheetah (Black cabinet Bonus shot 1/ball)=cheetah2.nv
+Cheetah (Black cabinet Bonus shot 1/game)=cheetah1.nv
+Cheetah (Black cabinet Free Play)=cheetafp.nv
+Cheetah (Black cabinet)=cheetah.nv
+Cheetah (Blue cabinet Bonus shot 1/ball)=cheetahb2.nv
+Cheetah (Blue cabinet)=cheetahb.nv
+Cheetah (Bonus shot 1/ball)=cheetah2.nv
+Cheetah (Bonus shot 1/game)=cheetah1.nv
+Cheetah (Free Play)=cheetafp.nv
+Cheech & Chong: Road-Trip'pin (Harley-Davidson unofficial MOD)=che_cho.nv
+Chuck-A-Luck=chucklck.nv
+Clash, The (Rock Encore unofficial MOD)=clash.nv
+Coney Island!=coneyis.nv
+Corsario (Free Play)=corsarfp.nv
+Corsario=corsario.nv
+Corvette (LA-1)=corv_la1.nv
+Corvette (LX-2)=corv_lx2.nv
+Captain Hook=cpthook.nv
+Champion Pub, The (1.6 Pinball FX)=cp_16pfx.nv
+CSI: Crime Scene Investigation (V1.03)=csi_103.nv
+CSI: Crime Scene Investigation (V1.04)=csi_104.nv
+CSI: Crime Scene Investigation (V2.0)=csi_200.nv
+CSI: Crime Scene Investigation (V2.1)=csi_210.nv
+Cue (Prototype)=cue.nv
+Cue Ball Wizard (older display rev )=cueball1.nv
+Cue Ball Wizard (rev. 2)=cueball2.nv
+Cue Ball Wizard (rev. 3)=cueball3.nv
+Cyclone (L-1)=cycln_l1.nv
+Cirqus Voltaire (D.52 Prototype)=cv_d52.nv
+Cyclopes (11/85)=cyclope1.nv
+Cyclopes (12/85)=cyclopes.nv
+Dale Jr. (5.00)=dalejr.nv
+Dr. Dude (LA-3C Competition MOD)=dd_l3c.nv
+Dr. Dude (LU-1 Europe)=dd_lu1.nv
+Dirty Harry (LF-2 French)=dh_lf2.nv
+Dracula (Free Play)=draculfp.nv
+Dracula=dracula.nv
+Dracula (One Ball MOD)=draculc.nv
+Diamond Lady (Free Play)=diamonfp.nv
+Diamond Lady (French Free Play)=diamnffp.nv
+Diamond Lady (French)=diamondf.nv
+Diamond Lady (German Free Play)=diamngfp.nv
+Diamond Lady (German)=diamondg.nv
+Demolition Man (H-6C Competition MOD)=dm_h6c.nv
+Diner (LF-2 French)=diner_f2.nv
+Diner (LG-2 German)=diner_g2.nv
+Diner (LU-2 Europe)=diner_l2.nv
+Diner (PA-0 Prototype)=diner_p0.nv
+Bram Stoker's Dracula (L-2C Competition MOD)=drac_l2c.nv
+Dragonfist (Free Play)=dragfifp.nv
+Dragonfist (MOD 14)=dragfis14.nv
+Dragonfist (MOD 3 rev. 1105)=dragfis3.nv
+Dragonfist (MOD 3 rev. 1109)=dragfis3b.nv
+Dragonfist (MOD Drop Target Score patch 2)=dragfib2.nv
+Dragonfist (MOD Drop Target Score patch)=dragfisb.nv
+Dragonfist=dragfist.nv
+
+New games supported because of the above roms added:
+Aaron Spelling
+Agents 777
+Ali
+Amazon Hunt II
+Amazon Hunt III
+Andromeda
+Atleta
+Attack
+Attila The Hun
+Big Game
+Black Velvet
+Break
+301/Bullseye
+Bushido
+Camel Lights
+Catacomb
+Cerberus
+Cheetah
+Cheech & Chong: Road-Trip'pin 
+Chuck-A-Luck
+The Clash
+Old Coney Island!
+Corsario
+Captain Hook
+Cue
+Cyclopes
+Dale Jr.
+Dracula
+Dragonfist
+
+Bugs fixed PINemHi:
+Star Light (L-1)=strlt_l1.nv, not showing all 4 high scores
+
+
+**********************
+PINemHi Version 3.6.1
+**********************
+Added the following games to PINemHi LeaderBoard:
+Hook
+TMNT
+Checkpoint
+Star Trek 25th Anniversary
+Robocop
+Secret Service
+Torpedo Alley
+Mousin Around
+Road Kings
+Space Station
+Banzai Run
+Big Guns
+Swords of Fury
+Transporter the rescue
+Police Force
+Mystery Castle
+Pistol Poker
+Grand Slam
+Spy Hunter
+Kings of Steel
+Xs & Os
+Gold Ball
+Speakeasy
+Spectrum
+Vector
+Elektra
+Medusa
+Fireball II
+Embryon
+Flash Gordon
+Frontier
+Skateball
+Viking
+Hot Doggin
+Nitro Groundshaker
+Mystic
+Kiss (Bally)
+Paragon
+Star Trek (Bally)
+Six Million Dollar Man
+Supersonic
+Playboy (Bally)
+
+Added badges (special scores) for:
+Barb Wire
+Mario Andretti
+Waterworld
+Frank Thomas Big Hurt
+
+Added support for roms to PINemHi LeaderBoard:
+bcats_g4 (Bad Cats)
+tom_12a (Theatre of Magic)
+waterwl5 (Waterworld)
+wd_12p (WHO Dunnit)
+wd_12gp (WHO Dunnit)
+fs_la5 (The Flintstones)
+sttng_x8 (Start Trek The Next Generation)
+
+changed pinemhi.ini to also match roms from vpinmame 3.4 , 3.5 and 3.6
+
+Bugs fixed:
+Batman not registering scores greater than 100 Million
+Mr. & Mrs. Pacman sending a score of 1500 when you start a game and then quit with a 0 score
+Rolling Stones (Bally) sending a score of 1400 or 140 when you start a game and then quit with a 0 score
+
+Misc:
+Tweet function removed
+
+**********************
+PINemHi Version 3.3.1
+**********************
+Added the following games to PINemHi LeaderBoard:
+Barb Wire
+Mario Andretti
+Waterworld
+Frank Thomas Big Hurt
+Shaq Attaq
+Rescue 911
+World Challenge Soccer
+Gladiators
+Wipe Out
+Tee'd Off
+Streetfighter II
+Operation: Thunder
+Surf 'n Safari
+Cactus Jack's
+Car Hop
+Hoops
+Vegas
+Title Fight
+Silver Slugger
+Lights...Camera...Action!
+King Kong
+WWF Royal Rumble
+Last Action Hero
+
+added support for roms to PINemHi LeaderBoard:
+bay_401
+jupk_600
+lah_113
+lw3_300
+lw3_301
+tftc_400
+tomy_500
+*These are all unofficial roms by Pinballcode.com (scoring is different then other official roms) 
+
+added features:
+1) 5 Minute Mode is back in , after a 7 year retirement !
+This will let you play a game for 5 minutes only
+5 Minute Mode has it's own cup and weekly challenge and of course its own hiscore lists
+You can avtivate it using a pre determined key (in pinemhi.ini).
+Exit key from Pinup System is also required in pinemhi.ini to function properly
+
+2) Activation/Deactivation of 5 Minute Mode will be told using a .wav file (you can choose different languages and voices)
+You also get a warning when you start a game when in 5 minute mode.
+You can also turn these 2 warning functions off in the pinemhi.ini file
+
+*Fixes
+1) Freddy nightmare on Elmstreet special score (souls saved) was set too high (now set to minimum of 40)
+2) The adventures of Rocky and Bullwinkle , address for special score (years wabac) was wrong...fixed that
+
+PINemHi changes:
+added rom support:
+ccruise (Caribbean Cruise)
+kiko_a10 (King Kong)
+lah_107 (Last Action Hero)
+lah_f104 (Last Action Hero)
+lah_c106 (Last Action Hero)
+wwfr_103f (WWF Royal Rumble)
+hook_401p (Hook)
+bay_d300 (Baywatch)
+bay_d400 (Baywatch)
+bay_e400 (Baywatch)
+bay_401 (Baywatch)
+bay_f201 (Baywatch)
+stwr_104 (Star Wars)
+mj_130 (Michael Jordan)
+
+**********************
+PINemHi Version 3.3
+**********************
+Added the following games to PINemHi LeaderBoard:
+Apollo 13
+Austin Powers
+Batman Forever
+Harley-Davidson (Stern)
+High Roller Casino
+Maverick
+Monopoly
+NFL
+Sharkeys Shootout
+Striker Xtreme
+
+Added support for roms:
+color rom support for spider-man and batman the dark knight
+added some other roms for baywatch and lost in space and some that i've forgotten to write down.
+also of course the roms for the new games
+
+added features:
+1) autorotate optimized, using preload of all the popups.
+this makes sure that when playing a game the autorotate function will not affect gameplay
+
+2) challenge, weeklychallenge and normal popups are not stacked anymore.
+if you activate one the other popup wil disappear
+
+3) extra background option added, this can be used to hide frontend images when pinemhi leaderboard for a game is on
+
+4) PINemHi LeaderBoard ini file has been changed to recognize more roms , you can use Vpinmame 3.3 official version or sambuild 3.3 version or still also sambuild 3.2 version
+roms should be recognized even if they have been given different (window title) names in different vpinmame versions.
+
+5) more than 100 badges have been added to the system (all for special scores , like XX combos or XX Walkers Killed etc) for over 40 games
+locked badge is now only 1 image
+
+*Fixes
+1) In a couple of games the badge-rewards were too easy , so I've adjusted them. (For instance South Park scoring badges)
+2) Added a check on the special scores where only initials are the score (for instance playboy (stern), apollo13 and goldeneye and lots more)
+This will check if the initials are different from the standard initials that are in for that game to prevent mistakes  
+3) Star Trek (Stern) for st_162h and st_162hc roms combo's scores weren't the right address. fixed the adress for those 2 roms
+
+ 
+**********************
+PINemHi Version 3.2.2
+**********************
+Added the following games to PINemHi LeaderBoard:
+Comet
+Cyclone
+Mr. & Mrs. Pac-Man
+
+Added support for roms:
+fh_906h
+stargat5
+startrp2
+sman_262,smanve_100,smanve_101
+im_181,im_182,im_183,im_185,im_186,im_183ve,im_185ve,im_186ve
+gs_lu3,gs_lu4
+
+added features:
+autorotate for the pop-ups , including a number of seconds setting
+on_at_start for the pop-ups
+manual selection x and y position of pop-ups
+manual selection x-centered and y position of pop-ups
+manual selection y-centered and x position of pop-ups
+weekly challenge key (to show the weekly challenge of this week and interim scores + previous week's winner)
+
+*Fix 
+For the game starship troopers the combo champion is set to more than 10 to register a score
+This was 13 for some reason
+------------------------------------------------------------------------------------------------------------------
+Added the following roms to PINemHi:
+stargat5
+startrp2
+im_185,im_186,im_185ve,im_186ve (including special scores)
+gs_lu3,gs_lu4,gs_la3,gs_lg6
+
+
+************************
+PINemHi Version 3.2.1.1
+************************
+Added the following games to PINemHi LeaderBoard:
+AC-DC
+X-men
+The Avengers
+Mustang
+Transformers
+Star Trek (Stern)
+The Walking Dead
+Metallica
+
+Added support for rom ww_lh6c (Whitewater)
+*fixed a bug that displayed the challenge popup twice when in cabinetview mode
+  
+************************
+PINemHi Version 3.2.1
+************************
+Added challenges to the system (can be started on cabinet or pc)
+
+************************
+PINemHi Version 3.2
+************************
+Integrated PINemHi LeaderBoard into the PINemHi installation file
+Added list Personal Best Top10 scores for a game (can be seen on cabinet or pc, no need to visit PINemHi website)
+Added list Personal special scores for a game (can be seen on cabinet or pc, no need to visit PINemHi website)
+Added list Friends + your Best Top10 scores for a game (can be seen on cabinet or pc, no need to visit PINemHi website)
+Added list Best Top10 scores for a game (can be seen on cabinet or pc, no need to visit PINemHi website)
+Added list CUP Top 10 standings and your Rank (can be seen on cabinet or pc, no need to visit PINemHi website)
+Added Badges for the games on the PINemHi Leaderboard (can be seen on cabinet or pc, no need to visit PINemHi website)
+Added a monitor to see if games have started, no need for frontend plugin (sending scores works with or without frontend) 
+
+************************
+PINemHi Version 1.3.2
+************************
+Added 51 roms , mostly color and newer stern
+Total Number of ROMS supported is now :      1291
+Total Number of FP-Games supported is now :   All (standard top ten hiscore table)
+Made PINemHi compatible with Vpinmame version 3.2
+
+************************
+PINemHi Version 1.3.1
+************************
+Added 99 roms , mostly SAM (including all special scores)
+Total Number of ROMS supported is now :      1240
+Total Number of VP-Games supported is now : 425
+Total Number of FP-Games supported is now :   All (standard top ten hiscore table)
+
+Made PINemHi compatible with Vpinmame version 3.0
+
+************************
+PINemHi Version 1.2
+************************
+Added  90 ROMS
+Total Number of ROMS supported is now :      1142
+Total Number of VP-Games supported is now : 388
+Total Number of FP-Games supported is now :   All (standard top ten hiscore table)
+
+replayscores support using an ini-file (added all roms from Gottlieb in pinemhi_replays.ini)
+selection for VP whether to have the hiscores only , replayscores only or both on.
+selection for VP whether to have the buy-in hiscores displayed
+These selections can be configured within the pinemhi.ini file 
+
+romfind fixes for games that start with 'the" in pinemhi.ini - thanks blur
+added 107 entries (new ones from vpinmame 2.5) to the romfind section in pinemhi.ini 
+
+Fixed Starship Troopers rom (startrp) not showing Conquered Klendathu 
+Fixed Rollercoaster Tycoon rom (rct600) not showing the right scores and initials
+Fixed Who Dunnit rom (wd_03r) not showing the right initials
+Fixed trucksp2 and trucksp3 not showing the right initials and scores - thanks freezy
+Fixed tag-team pinball to display right scores in tag team mode as well 
+
+************************
+PINemHi Version 1.1
+************************
+Added  101  VP-games
+Added  160 ROMS
+Total Number of ROMS supported is now :      1052
+Total Number of VP-Games supported is now : 388
+Total Number of FP-Games supported is now :   All (standard top ten hiscore table)
+
+Fixed some Sega and Stern games output that wasn't correct (caused by 3 initials or 10 initials choice):
+Godzilla , Golden Cue , Southpark , Sharkey's Shootout , Lost in Space , Highroller Casino , Austin Powers , Playboy (Stern)
+Fixed Fishtales scores for rock the boat and Fish Tales scores (had to read it as hex instead of decimal from the nvram)
+Dots in filenames were causing problems , this has now been fixed.
+
+
+************************
+PINemHi Version 1.0
+************************
+Added  35  VP-games
+Added  251 ROMS  (added lots of roms that are new in visual pinmame 2.4)
+Total Number of ROMS supported is now :       892
+Total Number of VP-Games supported is now : 287
+Total Number of FP-Games supported is now :   All (standard top ten hiscore table)
+
+From now on PINemHi will be a .Net 2 release instead of .Net 4  
+Full support on all Future Pinball Games (standard top ten hiscore table)
+romfind section in pinemhi.ini added to (future) support frontend(s)            * hyperpin via FPlaunch
+
+
+
+************************
+PINemHi Version 0.9
+************************
+Added 127 ROMS
+Added 95 VP-Games
+Added 1 FP-Game
+Total Number of ROMS supported is now :       641
+Total Number of FP-Games supported is now :    1
+Total Number of VP-Games supported is now : 252
+
+Added future pinball support    ***   First Future Pinball game added Family Guy Tribute   ***
+Added a pinemhi.ini to set the paths to Future pinball's fpram and Visual pinball's nvram
+PINemHi -lgf gives a list of FP-games supported
+PINemHi -lgv gives a list of VP-games supported
+PINemHi -lg is no more as of version 0.9
+-------------------------------------------------------------------------------------------------------------------------------- 
+Made segments in hiscore output.
+Made scores into fixed lengths (with multiple scores)
+changed some of the headers in the output to make it look better   * mostly for Sega and Stern games *
+-------------------------------------------------------------------------------------------------------------------------------
+fixed viprsega - used the wrong adresses for the bytes to pick up the data
+added the number of loops in mnfb_c27 (monday night football)
+-------------------------------------------------------------------------------------------------------------------------------
+
+Because of the Future Pinball support you now have to put the paths to Future pinball's fpram and Visual pinball's nvram in pinemhi.ini
+And also you have to give the extension on the commandline as well....
+For instance for visual pinball:
+PINemHi afm_113b.nv
+
+For instance for Future pinball:
+PINemhi familyguy.fpram
+ 
+
+
+************************
+PINemHi Version 0.8
+************************
+Added 178 ROMS
+Added 56 Games
+Total Number of ROMS supported is now :  514
+Total Number of Games supported is now : 157
+
+
+
+************************
+PINemHi Version 0.7
+************************
+Added 336 ROMS
+Added 101 Games
+
+
+Have Fun.  ---Dna Disturber---
+
+
+  
