@@ -8,12 +8,25 @@ Database::Database() {
 
 //Connexion à la BDD
 bool Database::openDatabase(){
+	struct databaseInfo
+    {
+        QByteArray host="MTk0LjE2NC42My41Nw==";
+        QByteArray user="c3Bpbm5lcl9oc191c2Vy";
+        QByteArray password="bmRwOWV4ZEBNQkcxdnVmLWNkag==";
+        QByteArray dbname="c3Bpbm5lcl9oaWdoc2NvcmVfZGI=";
+
+    }Infodb;
+	QByteArray decodedHost=QByteArray::fromBase64(Infodb.host);
+    QByteArray decodedPassword = QByteArray::fromBase64(Infodb.password);
+    QByteArray decodedUser = QByteArray::fromBase64(Infodb.user);
+    QByteArray decodedDbname = QByteArray::fromBase64(Infodb.dbname);
+	
     db = QSqlDatabase::addDatabase("QMYSQL");
-    db.setHostName("194.164.63.57");
+    db.setHostName(decodedHost);
     db.setPort(3306);
-    db.setDatabaseName("spinner_highscore_db");
-    db.setUserName("spinner_hs_user");
-    db.setPassword("ndp9exd@MBG1vuf-cdj");
+    db.setDatabaseName(decodedDbname);
+    db.setUserName(decodedUser);
+    db.setPassword(decodedPassword );
 
     if (db.open()){
         return true;
